@@ -1,6 +1,8 @@
 package com.nkydev;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.Objects;
 public class SoftwareEngineer {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private List<String> techStack;
@@ -17,17 +20,17 @@ public class SoftwareEngineer {
     public SoftwareEngineer() {
     }
 
-    public SoftwareEngineer(int id, String name, List<String> techStack) {
+    public SoftwareEngineer(Integer id, String name, List<String> techStack) {
         this.id = id;
         this.name = name;
         this.techStack = techStack;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
